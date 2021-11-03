@@ -1,9 +1,9 @@
-import React from 'react';
+import React ,{useState}from 'react';
 
  const CountButton= ()=>{
-     const currentCount = 0
+     const [currentCount, setCurrentCount] = useState(0)
      const handleClick=()=>{
-         alert("clicked")
+         setCurrentCount(currentCount+1)
      }
      return <div>
          <button onClick={handleClick}>+1</button>
