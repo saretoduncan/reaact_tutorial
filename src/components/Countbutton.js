@@ -1,9 +1,9 @@
 import React ,{useState}from 'react';
 
- const CountButton= ()=>{
-     const [currentCount, setCurrentCount] = useState(0)
+ const CountButton= (props)=>{
+     const [currentCount, setCurrentCount] = useState(0)//in order to update the dom
      const handleClick=()=>{
-         setCurrentCount(currentCount+1)
+         setCurrentCount(currentCount+props.incrementBy)// update state function 
      }
      return <div>
          <button onClick={handleClick}>+1</button>
