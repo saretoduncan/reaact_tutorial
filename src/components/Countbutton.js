@@ -5,8 +5,12 @@ import React ,{useState}from 'react';
      const handleClick=()=>{
          setCurrentCount(currentCount+props.incrementBy)// update state function 
      }
+     const buttonStyle={
+         backgroundColor: props.buttonBackgroundColor,
+         borderRadius:"10px",
+     }
      return <div>
-         <button onClick={handleClick}>+1</button>
+         <button style={buttonStyle} onClick={handleClick}>{props.incrementBy}</button>
          <div>{currentCount}</div>
      </div>;
  }
