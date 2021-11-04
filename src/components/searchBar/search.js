@@ -9,13 +9,15 @@ const Search=(props)=>{
         setSearchValue(event.target.value)
     }
     const shouldDisplayButton= searchValue.length>0; 
+    
     const handleClearClick=()=>{
             setSearchValue("")
     }
     const filteredProducts= props.products.filter((products)=> products.includes(searchValue))
+    const hasProducts= filteredProducts.length>0
     return(
         <div>
-            <input type="text" value={searchValue} onChange={handleInputChanage}/>
+            {hasProducts?<input type="text" value={searchValue} onChange={handleInputChanage}/>: "loading..."}
            {shouldDisplayButton && <button onClick={handleClearClick}> clear </button>}
            <ul>
                {filteredProducts.map((product)=>{
