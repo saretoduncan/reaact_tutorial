@@ -4,6 +4,7 @@ import "./search.css"
 const Search=(props)=>{
     
     const [searchValue, setSearchValue]= useState("")
+   
     const handleInputChanage=(event)=>{
         setSearchValue(event.target.value)
     }
