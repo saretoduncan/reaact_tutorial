@@ -5,10 +5,14 @@ const Search=()=>{
     const handleInputChanage=(event)=>{
         setSearchValue(event.target.value)
     }
+    const shouldDisplayButton= searchValue>0;
+    const handleClearClick=()=>{
+            setSearchValue("")
+    }
     return(
         <div>
             <input type="text" value={searchValue} onChange={handleInputChanage}/>
-            {searchValue}
+           {shouldDisplayButton && <button onClick={handleClearClick}> clear </button>}
         </div>
     )
 }
